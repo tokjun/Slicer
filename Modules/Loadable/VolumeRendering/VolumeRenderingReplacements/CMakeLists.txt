@@ -77,13 +77,14 @@ configure_file(${CMAKE_CURRENT_BINARY_DIR}/vtkObjectFactory.h.in
   ${CMAKE_CURRENT_BINARY_DIR}/${vtk-module}ObjectFactory.h)
 configure_file(${VTK_CMAKE_DIR}/vtkObjectFactory.cxx.in
   ${CMAKE_CURRENT_BINARY_DIR}/${vtk-module}ObjectFactory.cxx)
-list(APPEND Module_SRCS
-  ${CMAKE_CURRENT_BINARY_DIR}/${vtk-module}ObjectFactory.cxx)
+#list(APPEND Module_SRCS
+#  ${CMAKE_CURRENT_BINARY_DIR}/${vtk-module}ObjectFactory.cxx)
 set_source_files_properties(
   ${vtk-module}ObjectFactory.cxx
-  WRAP_EXCLUDE
+  WRAP_EXCLUDE_PYTHON
   )
-list(APPEND module_replacements_SRCS ${vtk-module}ObjectFactory.cxx)
+
+#list(APPEND module_replacements_SRCS ${vtk-module}ObjectFactory.cxx)
 
 set(module_replacements_target_libraries
   ${VTK_LIBRARIES}

@@ -549,7 +549,7 @@ set(Slicer_VTK_COMPONENTS
   vtkFiltersFlowPaths
   vtkFiltersGeometry
   vtkGUISupportQtOpenGL
-  vtkGUISupportQtWebkit
+#  vtkGUISupportQtWebkit
   vtkGUISupportQtSQL
   vtkIOImage
   vtkIOLegacy
@@ -773,7 +773,7 @@ endif()
 #-----------------------------------------------------------------------------
 # VTK
 #-----------------------------------------------------------------------------
-find_package(VTK 6.1 COMPONENTS ${Slicer_VTK_COMPONENTS} REQUIRED NO_MODULE)
+find_package(VTK 7.1 COMPONENTS ${Slicer_VTK_COMPONENTS} REQUIRED NO_MODULE)
 if(NOT TARGET vtkGUISupportQt)
   message(FATAL_ERROR "error: VTK was not configured to use QT, you probably need "
                     "to recompile it with VTK_USE_GUISUPPORT ON, VTK_Group_Qt ON, "

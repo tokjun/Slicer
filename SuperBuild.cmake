@@ -85,7 +85,7 @@ mark_as_superbuild(
 
 set(ITK_EXTERNAL_NAME ITKv4)
 
-set(VTK_EXTERNAL_NAME VTKv6)
+set(VTK_EXTERNAL_NAME VTKv7)
 
 set(Slicer_DEPENDENCIES curl teem ${VTK_EXTERNAL_NAME} ${ITK_EXTERNAL_NAME} CTK LibArchive)
 
@@ -260,9 +260,16 @@ Slicer_Remote_Add(BRAINSTools
   )
 list_conditional_append(Slicer_BUILD_BRAINSTOOLS Slicer_REMOTE_DEPENDENCIES BRAINSTools)
 
+#Slicer_Remote_Add(EMSegment
+#  SVN_REPOSITORY "http://svn.slicer.org/Slicer3/branches/Slicer4-EMSegment"
+#  SVN_REVISION -r "17115"
+#  OPTION_NAME Slicer_BUILD_EMSegment
+#  OPTION_DEPENDS "Slicer_BUILD_BRAINSTOOLS;Slicer_BUILD_QTLOADABLEMODULES;Slicer_USE_PYTHONQT_WITH_TCL"
+#  LABELS REMOTE_MODULE
+#  )
 Slicer_Remote_Add(EMSegment
-  SVN_REPOSITORY "http://svn.slicer.org/Slicer3/branches/Slicer4-EMSegment"
-  SVN_REVISION -r "17115"
+  GIT_REPOSITORY "${git_protocol}://github.com/tokjun/Slicer4-EMSegment.git"
+  GIT_TAG "eeb6927908057847481d92152db484735bcb8ee1"
   OPTION_NAME Slicer_BUILD_EMSegment
   OPTION_DEPENDS "Slicer_BUILD_BRAINSTOOLS;Slicer_BUILD_QTLOADABLEMODULES;Slicer_USE_PYTHONQT_WITH_TCL"
   LABELS REMOTE_MODULE
