@@ -40,6 +40,7 @@
 VTK_MODULE_INIT(vtkRenderingContextOpenGL2);
 #else
 VTK_MODULE_INIT(vtkRenderingContextOpenGL);
+#endif
 
 // STD includes
 
@@ -62,4 +63,3 @@ int qMRMLVolumePropertyNodeWidgetTest1(int argc, char * argv [] )
   return app.exec();
 }
 
-#endif
